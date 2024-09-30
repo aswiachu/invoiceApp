@@ -21,7 +21,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<CustomerTable/>}></Route>
+    
         <Route path="/" element={<Dashboard />}>
           <Route index element={<Home />} />
           <Route path="customers" element={<Customers />} />
@@ -34,6 +34,7 @@ const App = () => {
           <Route path="settings" element={<Settings />} />
         </Route>
         <Route path='/organizationSetupForm' element={<OrganizationSetupForm/>} />
+        <Route path='/customertable' element={<CustomerTable/>} />
       </Routes>
     </BrowserRouter>
   );
