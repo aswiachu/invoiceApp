@@ -31,7 +31,6 @@ const BusinessDetailsForm = () => {
   return (
     <form onSubmit={handleSubmit} className="form-group">
       <h4>Personal Information</h4>
-      
       <label htmlFor="clientName">Client Name:</label>
       <input
         type="text"

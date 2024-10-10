@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowRightToBracket, faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -12,53 +15,98 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Perform login logic here (e.g., authentication)
-    navigate('/organisation-details'); 
+    navigate('/organisation-details');
   };
 
   return (
-    <section className="h-100 d-flex align-items-center justify-content-center p-3">
-      <form className="col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3" onSubmit={handleSubmit}>
-        <div className="text-center">
-          <h3 className="mb-5">Login to your account</h3>
+    <section className="vh-100 d-flex align-items-center justify-content-center p-2">
+      <form className="col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3 border border-1 p-3 rounded shadow-lg" onSubmit={handleSubmit}>
+        <div className="text-center m-3 mb-5">
+          <FontAwesomeIcon icon={faArrowRightToBracket} size='3x' />
         </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email address</label>
+
+        <div className="my-3 border border-2 rounded px-3 py-1 border-dark d-flex align-items-center justify-content-center">
+          <div className="d-flex align-items-center justify-content-center">
+            <FontAwesomeIcon icon={faUser} />
+          </div>
           <input
             type="email"
-            className="form-control"
+            className="form-control border-0"
             id="email"
             aria-describedby="emailHelp"
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            placeholder="Email address"
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">Password</label>
+
+        <div className="mb-3 border border-2 rounded px-3 py-1 border-dark d-flex align-items-center justify-content-center">
+          <div className="d-flex align-items-center justify-content-center">
+            <FontAwesomeIcon icon={faLock} />
+          </div>
           <input
             type="password"
-            className="form-control"
+            className="form-control border-0"
             id="password"
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            placeholder='Password'
           />
         </div>
-        <div className="text-center mt-5 mb-2">
-          <button type="submit" className="btn btn-primary px-5 login">Login</button>
+
+        <label>
+          <input
+            type="checkbox"
+          // checked={}
+          // onChange={}
+          />
+          <span> I agree to the{" "}</span>
+          <a href="/terms-and-conditions" target="_blank" className='text-decoration-none'>
+            terms and conditions
+          </a>
+        </label>
+
+        {/* <div className="text-center mt-4 mb-2">
+          <Link to="/dashboard">
+            <button type="submit" className="btn btn-primary px-5 login w-100 fw-bold py-2">Login</button>
+          </Link>
+        </div> */}
+
+        <div className="text-center mt-4 mb-2">
+          <button type="submit" className="btn btn-primary px-5 login w-100 fw-bold py-2">Login</button>
         </div>
-        <div className="mb-2 text-right">
-          <div className="form-text d-flex justify-content-between">
-            <div>
-              <a href="#">Forgot password?</a>
-            </div>
-            <div>
-            <Link to="/signup">Sign up</Link>
-            </div>
-          </div>
+
+        <div className='text-center'>
+          <p className='fw-bold m-1 mt-4'>Sign in using</p>
+          <ul className="list-unstyled d-flex gap-2 justify-content-center ">
+            <li>
+              <a href="">
+                <FontAwesomeIcon icon={faGoogle} size="2x" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </a>
+            </li>
+          </ul>
         </div>
+
+        <div className='text-center'>
+          <span>Don't have an account ?
+            <Link to="/signup" className='text-decoration-none fw-bold'> Sign up</Link>
+          </span>
+        </div>
+
       </form>
     </section>
   );

@@ -81,12 +81,10 @@ const CustomerTable = () => {
                 </button>
               </div>
               <div className="modal-body">
-                {/* Add form fields here */}
                 <div className="form-group">
                   <label>Customer Name</label>
                   <input type="text" className="form-control" />
                 </div>
-                {/* Add other fields similarly */}
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" onClick={() => setShowAddModal(false)}>Close</button>

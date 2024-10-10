@@ -14,8 +14,7 @@ const PaymentReceivedTab = () => {
                                 <FontAwesomeIcon icon={faUser} className="navTab-icons" />
                                 <p>There are no active customers</p>
                                 <button className="btn bg-dark text-white btn-create">
-                                <FontAwesomeIcon icon={faPlus} />
-                                    New Customer</button>
+                                <FontAwesomeIcon icon={faPlus} /> New Customer</button>
                             </div>
                         </div>
                     </div>
