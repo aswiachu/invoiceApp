@@ -154,17 +154,17 @@ const SignUpForm = () => {
           <p className='fw-bold m-1 mt-4'>Or sign in using</p>
           <ul className="list-unstyled d-flex gap-2 justify-content-center ">
             <li>
-              <a href="">
+              <a >
                 <FontAwesomeIcon icon={faGoogle} size="2x" />
               </a>
             </li>
             <li>
-              <a href="">
+              <a >
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </a>
             </li>
             <li>
-              <a href="">
+              <a >
                 <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
             </li>

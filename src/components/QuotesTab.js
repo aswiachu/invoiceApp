@@ -32,7 +32,7 @@ const QuotesTab = () => {
               <div className='text-center my-5 py-5'>
                <FontAwesomeIcon icon={faFileInvoice} className="navTab-icons" />
                 <p>There are no draft quotes.</p>
-                <a href="">
+                <a>
                   <button className="btn bg-dark text-white btn-create"> 
                   <FontAwesomeIcon icon={faPlus} className="icons"/>
                   <span> New Quotes</span>

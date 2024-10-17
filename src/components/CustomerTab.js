@@ -29,7 +29,7 @@ const CustomerTab = () => {
               <div className='text-center my-5 py-5'>
                 <FontAwesomeIcon icon={faUser} className="navTab-icons" />
                 <p>There are no active customers</p>
-                <a href="">
+                <a>
                   <button className="btn bg-dark text-white btn-create">
                   <FontAwesomeIcon icon={faPlus} />
                     <span> New Customer</span>
