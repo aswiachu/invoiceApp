@@ -9,10 +9,10 @@ module.exports = {
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `images`,
-          path: `${__dirname}/src/images/`, // Adjust as necessary
+          path: `${__dirname}/src/components/img`, // Adjust as necessary
         },
       },
-      // Other plugins can be added here
+      // Add other plugins here if needed
     ],
   };
   
