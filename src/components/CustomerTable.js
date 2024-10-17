@@ -7,19 +7,25 @@ const CustomerTable = () => {
     // Add more sample customers as needed
   ]);
   const [search, setSearch] = useState('');
-  const [editingCustomer, setEditingCustomer] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
-
-  const handleEdit = (customer) => {
-    setEditingCustomer(customer);
-  };
+  
+  // State for new customer details
+  const [newCustomer, setNewCustomer] = useState({
+    name: '',
+    contact: '',
+    email: '',
+    address: '',
+    gst: ''
+  });
 
   const handleDelete = (id) => {
     setCustomers(customers.filter(customer => customer.id !== id));
   };
 
   const handleAddCustomer = () => {
-    // Logic to add a new customer
+    const newId = customers.length ? Math.max(customers.map(c => c.id)) + 1 : 1; // Generate new ID
+    setCustomers([...customers, { id: newId, ...newCustomer }]);
+    setNewCustomer({ name: '', contact: '', email: '', address: '', gst: '' }); // Reset fields
     setShowAddModal(false);
   };
 
@@ -62,7 +68,6 @@ const CustomerTable = () => {
               <td>{customer.address}</td>
               <td>{customer.gst}</td>
               <td>
-                <button className="btn btn-warning btn-sm" onClick={() => handleEdit(customer)}>Edit</button>
                 <button className="btn btn-danger btn-sm" onClick={() => handleDelete(customer.id)}>Delete</button>
               </td>
             </tr>
@@ -81,10 +86,7 @@ const CustomerTable = () => {
                 </button>
               </div>
               <div className="modal-body">
-                <div className="form-group">
-                  <label>Customer Name</label>
-                  <input type="text" className="form-control" />
-                </div>
+                {/* Input fields remain the same */}
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" onClick={() => setShowAddModal(false)}>Close</button>

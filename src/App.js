@@ -17,7 +17,6 @@ import Settings from './components/SettingsTab';
 import Index from './components/Index';
 import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
-import Sample from './components/Sample'; 
 import OrganizationSetupForm from './components/OrganizationSetupForm';
 import CustomerTable from './components/CustomerTable';
 
@@ -25,7 +24,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path='/' element={<Sample />} /> */}
         <Route path='/' element={<Index />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Home />} />

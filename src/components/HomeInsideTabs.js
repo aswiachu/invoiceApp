@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faFileInvoice, faUser, faReceipt } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons'; // Keep only the used icon
 import './sidebarStyle.css';
 
 const Tabs = () => {
-  // State to keep track of the currently selected tab
   const [activeTab, setActiveTab] = useState('invoices');
 
-  // Function to handle tab clicks
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
 
-  // Render content based on the selected tab
   const renderContent = () => {
     switch (activeTab) {
       case 'invoices':
@@ -57,16 +54,13 @@ const Tabs = () => {
     <div className="tabs-container">
       <ul className="nav-tabs d-flex justify-content-around list-unstyled border-0">
         <li className={`nav-tab ${activeTab === 'invoices' ? 'active' : ''}`} onClick={() => handleTabClick('invoices')}>
-          <button className="py-1 px-2 tabs-btn"> Invoices
-          </button>
+          <button className="py-1 px-2 tabs-btn">Invoices</button>
         </li>
         <li className={`nav-tab ${activeTab === 'quotes' ? 'active' : ''}`} onClick={() => handleTabClick('quotes')}>
-          <button className="py-1 px-2 tabs-btn">Quotes
-          </button>
+          <button className="py-1 px-2 tabs-btn">Quotes</button>
         </li>
         <li className={`nav-tab ${activeTab === 'expenses' ? 'active' : ''}`} onClick={() => handleTabClick('expenses')}>
-          <button className="py-1 px-2 tabs-btn">Expenses
-          </button>
+          <button className="py-1 px-2 tabs-btn">Expenses</button>
         </li>
       </ul>
       <section className="tab-content bg-white mx-2 py-3 my-4">

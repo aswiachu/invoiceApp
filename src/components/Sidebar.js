@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faUser, faBagShopping, faNoteSticky, faFileInvoice, faDownload, faClipboard, faChartColumn, faGear, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -20,7 +21,13 @@ const SidebarItem = ({ to, icon, text }) => (
   </li>
 );
 
-const Sidebar = forwardRef(({ onClose }, ref) => {
+SidebarItem.propTypes = {
+  to: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired,
+  text: PropTypes.string.isRequired,
+};
+
+const Sidebar = forwardRef(function Sidebar({ onClose }, ref) {
   return (
     <aside className="bg-dark vh-100 sidebarNav-body" ref={ref}>
       <ul className="sidebarNav-ul p-0">
@@ -48,5 +55,9 @@ const Sidebar = forwardRef(({ onClose }, ref) => {
     </aside>
   );
 });
+
+Sidebar.propTypes = {
+  onClose: PropTypes.func.isRequired,
+};
 
 export default Sidebar;

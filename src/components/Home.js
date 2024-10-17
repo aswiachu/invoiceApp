@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import Navbar from './Navbar';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileInvoice, faUser, faReceipt, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Tabs from './HomeInsideTabs';
 import sparkleImg from './img/sparkle.webp';
-import Sidebar from './Sidebar';
+import PropTypes from 'prop-types';
 
 const IconCard = ({ icon, label }) => {
   return (
@@ -16,12 +15,15 @@ const IconCard = ({ icon, label }) => {
       </div>
       <p className="text-center m-0">{label}</p>
     </div>
-
   );
 };
 
+IconCard.propTypes = {
+  icon: PropTypes.object.isRequired,
+  label: PropTypes.string.isRequired,
+};
+
 const Home = () => {
- 
   return (
     <main className='home-bg-color'>
       <div className="dashBoardNavContent">
@@ -31,7 +33,7 @@ const Home = () => {
           </div>
           <div className="col-10">
             <h4>Welcome Aswitha</h4>
-            <p className="m-0">Here's your organization overview</p>
+            <p className="m-0">Here&apos;s your organization overview</p>
           </div>
         </section>
 
@@ -66,9 +68,7 @@ const Home = () => {
         </section>
       </div>
     </main>
-
   );
 };
 
-
-export default Home
+export default Home;

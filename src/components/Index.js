@@ -106,7 +106,7 @@ const Header = () => {
                 <div className="row my-3">
                     <div className="col-md-6">
                         <h3>Customizable Templates</h3>
-                        <p>Create professional-looking invoices that reflect your brand's identity. Choose from a variety of templates and customize them to your needs.</p>
+                        <p>Create professional-looking invoices that reflect your brand&apos;s identity. Choose from a variety of templates and customize them to your needs.</p>
                     </div>
                     <div className="col-md-6">
                         <h3>Permission Sets for Staff</h3>
@@ -140,7 +140,7 @@ const Header = () => {
                     </div>
                     <div className="col-md-6">
                         <h3>Freelancers without Company Can Use</h3>
-                        <p>Whether you're a freelancer or run a small business, our app is designed to cater to your invoicing needs without requiring a registered company.</p>
+                        <p>Whether you&apos;re a freelancer or run a small business, our app is designed to cater to your invoicing needs without requiring a registered company.</p>
                     </div>
                 </div>
                 <div className="row my-3">

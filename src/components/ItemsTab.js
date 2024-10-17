@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Sidebar from './Sidebar';
-import Navbar from './Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping, faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -31,10 +29,8 @@ const ItemsTab = () => {
               <div className='text-center my-5 py-5'>
                 <FontAwesomeIcon icon={faBagShopping} className="navTab-icons" />
                 <p>There are no active items</p>
-                <a href="customer-details.html">
                   <button className="btn bg-dark text-white btn-create">
-                    <FontAwesomeIcon icon={faPlus} className="icon"/><span> New Item</span></button>
-                </a>
+                    <FontAwesomeIcon icon={faPlus} className="icon"/><span>New Item</span></button>
               </div>
             )}
             {activeTab === 'unpaid' && (

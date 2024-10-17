@@ -84,25 +84,19 @@ const LoginForm = () => {
           <p className='fw-bold m-1 mt-4'>Sign in using</p>
           <ul className="list-unstyled d-flex gap-2 justify-content-center ">
             <li>
-              <a href="">
                 <FontAwesomeIcon icon={faGoogle} size="2x" />
-              </a>
             </li>
             <li>
-              <a href="">
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
-              </a>
             </li>
             <li>
-              <a href="">
                 <FontAwesomeIcon icon={faGithub} size="2x" />
-              </a>
             </li>
           </ul>
         </div>
 
         <div className='text-center'>
-          <span>Don't have an account ?
+          <span>Don&apos;t have an account ?
             <Link to="/signup" className='text-decoration-none fw-bold'> Sign up</Link>
           </span>
         </div>
