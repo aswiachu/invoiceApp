@@ -73,7 +73,7 @@ const Header = () => {
                         <h1 className="my-3">Simplify Your Invoicing with Achu Invoice</h1>
                         <p className="my-4">Effortless Invoicing and Inventory Management for Businesses and Freelancers</p>
                         {/* Use Link from react-router-dom for internal routing if needed */}
-                        <Link to="/side-bar">
+                        <Link to="/dashboard">
                             <button className="invoice-btn bg-primary text-white border-0 py-2 rounded my-3">
                                 Start Invoicing
                             </button>
