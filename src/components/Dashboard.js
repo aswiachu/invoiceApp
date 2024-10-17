@@ -7,8 +7,7 @@ const Dashboard = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [navText, setNavText] = useState('Home'); // Default text
   const sidebarRef = useRef(null); // Create a ref for the sidebar
-
-  const location = useLocation();
+  const location = useLocation(); // Get the current location
 
   const toggleSidebar = () => {
     setSidebarOpen(prevState => !prevState);
@@ -21,31 +20,31 @@ const Dashboard = () => {
   useEffect(() => {
     // Update navText based on current route
     switch (location.pathname) {
-      case '/':
+      case '/dashboard':
         setNavText('Home');
         break;
-      case '/customers':
+      case '/dashboard/customers':
         setNavText('Customers');
         break;
-      case '/items':
+      case '/dashboard/items':
         setNavText('Items');
         break;
-      case '/quotes':
+      case '/dashboard/quotes':
         setNavText('Quotes');
         break;
-      case '/invoice':
+      case '/dashboard/invoice':
         setNavText('Invoice');
         break;
-      case '/payment-received':
+      case '/dashboard/payment-received':
         setNavText('Payment Received');
         break;
-      case '/expenses':
+      case '/dashboard/expenses':
         setNavText('Expenses');
         break;
-      case '/reports':
+      case '/dashboard/reports':
         setNavText('Reports');
         break;
-      case '/settings':
+      case '/dashboard/settings':
         setNavText('Settings');
         break;
       default:

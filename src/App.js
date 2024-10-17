@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
-import Customers from './components/CustomerTab'; // Import other components
+import Customers from './components/CustomerTab'; 
 import Items from './components/ItemsTab';
 import Quotes from './components/QuotesTab';
 import Invoice from './components/InvoiceTab';
@@ -36,6 +36,7 @@ const App = () => {
           <Route path="reports" element={<Reports />} />
           <Route path="settings" element={<Settings />} />
         </Route>
+        
         <Route path='/organizationSetupForm' element={<OrganizationSetupForm />} />
         <Route path='/customerTable' element={<CustomerTable />} />
         <Route path='/login' element={<LoginForm />} />

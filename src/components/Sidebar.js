@@ -1,10 +1,21 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from 'react'; // Ensure forwardRef is imported
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faUser, faBagShopping, faNoteSticky, faFileInvoice, faDownload, faClipboard, faChartColumn, faGear, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
-import invoiceLogo from './img/invoice-icon.avif';
-import './sidebarStyle.css';
+import { 
+  faHouse, 
+  faUser, 
+  faBagShopping, 
+  faNoteSticky, 
+  faFileInvoice, 
+  faDownload, 
+  faClipboard, 
+  faChartColumn, 
+  faGear, 
+  faAngleLeft 
+} from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom'; // Ensure Link is imported
+import invoiceLogo from './img/invoice-icon.avif'; // Ensure the image path is correct
+import './sidebarStyle.css'; // Your CSS for styling
 
 const SidebarItem = ({ to, icon, text }) => (
   <li className="my-4 ms-4">
@@ -38,15 +49,15 @@ const Sidebar = forwardRef(function Sidebar({ onClose }, ref) {
           </Link>
         </li>
         <li className=''>
-          <SidebarItem to="/" icon={faHouse} text="Home" />
-          <SidebarItem to="/customers" icon={faUser} text="Customers" />
-          <SidebarItem to="/items" icon={faBagShopping} text="Items" />
-          <SidebarItem to="/quotes" icon={faNoteSticky} text="Quotes" />
-          <SidebarItem to="/invoice" icon={faFileInvoice} text="Invoice" />
-          <SidebarItem to="/payment-received" icon={faDownload} text="Payment Received" />
-          <SidebarItem to="/expenses" icon={faClipboard} text="Expenses" />
-          <SidebarItem to="/reports" icon={faChartColumn} text="Reports" />
-          <SidebarItem to="/settings" icon={faGear} text="Settings" />
+          <SidebarItem to="/dashboard" icon={faHouse} text="Home" />
+          <SidebarItem to="/dashboard/customers" icon={faUser} text="Customers" />
+          <SidebarItem to="/dashboard/items" icon={faBagShopping} text="Items" />
+          <SidebarItem to="/dashboard/quotes" icon={faNoteSticky} text="Quotes" />
+          <SidebarItem to="/dashboard/invoice" icon={faFileInvoice} text="Invoice" />
+          <SidebarItem to="/dashboard/payment-received" icon={faDownload} text="Payment Received" />
+          <SidebarItem to="/dashboard/expenses" icon={faClipboard} text="Expenses" />
+          <SidebarItem to="/dashboard/reports" icon={faChartColumn} text="Reports" />
+          <SidebarItem to="/dashboard/settings" icon={faGear} text="Settings" />
         </li>
         <li className='bottom-close-icon' onClick={onClose}>
           <FontAwesomeIcon icon={faAngleLeft} className='icon' />
