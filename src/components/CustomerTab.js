@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser , faPlus} from '@fortawesome/free-solid-svg-icons';
+import { faUser, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const CustomerTab = () => {
+  const navigate = useNavigate();
+
   const [activeTab, setActiveTab] = useState('active');
 
   const handleTabClick = (tab) => {
@@ -30,8 +33,9 @@ const CustomerTab = () => {
                 <FontAwesomeIcon icon={faUser} className="navTab-icons" />
                 <p>There are no active customers</p>
                 <a>
-                  <button className="btn bg-dark text-white btn-create">
-                  <FontAwesomeIcon icon={faPlus} />
+                  <button className="btn bg-dark text-white btn-create" onClick={() => {navigate('/createCustomer')}}>
+
+                    <FontAwesomeIcon icon={faPlus} />
                     <span> New Customer</span>
                   </button>
                 </a>
@@ -45,7 +49,7 @@ const CustomerTab = () => {
             )}
             {activeTab === 'all' && (
               <div className='text-center my-5 py-5'>
-               <FontAwesomeIcon icon={faUser} className="navTab-icons" />
+                <FontAwesomeIcon icon={faUser} className="navTab-icons" />
                 <p>There are no customers</p>
               </div>
             )}

@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
-import Customers from './components/CustomerTab'; 
+import Customers from './components/CustomerTab';
 import Items from './components/ItemsTab';
 import Quotes from './components/QuotesTab';
 import Invoice from './components/InvoiceTab';
@@ -19,13 +19,19 @@ import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
 import OrganizationSetupForm from './components/OrganizationSetupForm';
 import CustomerTable from './components/CustomerTable';
+import BusinessDetailsForm from './components/BusinessDetailsForm';
+import CreateInvoice from './components/CreateInvoice';
+import CreateCustomer from './components/CreateCustomer';
+import NewItem from './components/NewItem';
+import NewQuote from './components/NewQuote';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+
         <Route path='/' element={<Index />} />
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<Home />} />
           <Route path="customers" element={<Customers />} />
           <Route path="items" element={<Items />} />
@@ -36,11 +42,17 @@ const App = () => {
           <Route path="reports" element={<Reports />} />
           <Route path="settings" element={<Settings />} />
         </Route>
+
         
-        <Route path='/organizationSetupForm' element={<OrganizationSetupForm />} />
-        <Route path='/customerTable' element={<CustomerTable />} />
         <Route path='/login' element={<LoginForm />} />
         <Route path='/signup' element={<SignUpForm />} />
+        <Route path='/createInvoice' element={<CreateInvoice />} />
+        <Route path='/createCustomer' element={<CreateCustomer />} />
+        <Route path='/newItem' element={<NewItem/>} />
+        <Route path='/newQuote' element={<NewQuote/>} />
+        <Route path='/businessDetailsForm' element={<BusinessDetailsForm />} />
+        <Route path='/customerTable' element={<CustomerTable />} />
+        <Route path="organizationSetupForm" element={<OrganizationSetupForm />} />
       </Routes>
     </BrowserRouter>
   );

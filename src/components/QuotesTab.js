@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus , faFileInvoice} from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom'; 
+    
 
 const QuotesTab = () => {
+  const navigate = useNavigate(); 
+
   const [activeTab, setActiveTab] = useState('draft');
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+
 
   return (
     <div className="dashBoardNavContent">
@@ -32,7 +37,7 @@ const QuotesTab = () => {
               <div className='text-center my-5 py-5'>
                <FontAwesomeIcon icon={faFileInvoice} className="navTab-icons" />
                 <p>There are no draft quotes.</p>
-                  <button className="btn bg-dark text-white btn-create"> 
+                  <button className="btn bg-dark text-white btn-create" onClick={() => {navigate('/newQuote')}}> 
                   <FontAwesomeIcon icon={faPlus} className="icons"/>
                   <span> New Quotes</span>
                   </button>

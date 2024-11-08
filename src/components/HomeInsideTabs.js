@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons'; // Keep only the used icon
 import './sidebarStyle.css';
+import { useNavigate } from 'react-router-dom';
 
 const Tabs = () => {
+  const navigate = useNavigate();
+  const handleCreateInvoice = () => {
+    navigate('/createInvoice');
+  }
+
   const [activeTab, setActiveTab] = useState('invoices');
 
   const handleTabClick = (tab) => {
@@ -17,7 +23,7 @@ const Tabs = () => {
           <div className='text-center my-5'>
             <h6>View Your Receivables Summary</h6>
             <p>Keep an eye on current and overdue amounts your customers owe you.</p>
-            <button className="btn bg-dark text-white">
+            <button className="btn bg-dark text-white" onClick={handleCreateInvoice}>
               <FontAwesomeIcon icon={faPlus} />
               <span> Create Invoice</span>
             </button>

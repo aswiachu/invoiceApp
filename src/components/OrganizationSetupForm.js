@@ -19,6 +19,7 @@ const OrganizationSetupForm = () => {
     isGstRegistered: false,
     showAddressFields: false,
   });
+  const [error, setError] = useState('');
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -37,8 +38,32 @@ const OrganizationSetupForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // Validation check
+    if (!formData.organizationName) {
+      setError("Organization Name is required.");
+      return;
+    }
+    if (!formData.industry) {
+      setError("Industry is required.");
+      return;
+    }
+    setError(''); // Clear error if validation passes
     console.log(formData); // Replace with your form submission logic
   };
+
+  const states = [
+    "Andaman and Nicobar Islands",
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    // Add other states as needed
+  ];
+
+  const timeZones = [
+    "UTC-12:00 International Date Line West",
+    "UTC-11:00 Coordinated Universal Time-11",
+    // Add other time zones as needed
+  ];
 
   return (
     <section className="m-3">
@@ -47,6 +72,7 @@ const OrganizationSetupForm = () => {
           <div className="text-center">
             <h3 className="mb-5">Organization Setup</h3>
           </div>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
           <div className="mb-3">
             <label htmlFor="organizationName" className="form-label">Organization Name</label>
             <input
@@ -56,6 +82,7 @@ const OrganizationSetupForm = () => {
               name="organizationName"
               value={formData.organizationName}
               onChange={handleChange}
+              required
             />
           </div>
           <div className="mb-3">
@@ -67,6 +94,7 @@ const OrganizationSetupForm = () => {
               name="industry"
               value={formData.industry}
               onChange={handleChange}
+              required
             />
           </div>
           <div className="my-3 row">
@@ -91,10 +119,9 @@ const OrganizationSetupForm = () => {
                 onChange={handleChange}
               >
                 <option value="" disabled>Select State/Union Territory</option>
-                {/* Add other options here */}
-                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                <option value="Andhra Pradesh">Andhra Pradesh</option>
-                {/* Add more states as per your requirement */}
+                {states.map((state) => (
+                  <option key={state} value={state}>{state}</option>
+                ))}
               </select>
             </div>
           </div>
@@ -174,7 +201,7 @@ const OrganizationSetupForm = () => {
               >
                 <option value="" disabled>Select Language</option>
                 <option value="English">English</option>
-                {/* Add more languages as per your requirement */}
+                {/* Add more languages as needed */}
               </select>
             </div>
           </div>
@@ -188,8 +215,9 @@ const OrganizationSetupForm = () => {
               onChange={handleChange}
             >
               <option value="" disabled>Select Time Zone</option>
-              <option value="UTC-12:00">UTC-12:00 International Date Line West</option>
-              {/* Add more time zones as per your requirement */}
+              {timeZones.map((zone) => (
+                <option key={zone} value={zone}>{zone}</option>
+              ))}
             </select>
           </div>
           <div className="row justify-content-between my-4">
@@ -203,6 +231,7 @@ const OrganizationSetupForm = () => {
                 placeholder="Enter your GSTIN"
                 value={formData.gstin}
                 onChange={handleChange}
+                disabled={!formData.isGstRegistered} // Only enable if registered
               />
             </div>
             <div className="col-md-2">

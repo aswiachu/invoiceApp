@@ -1,8 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faUser} from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom'; 
 
 const PaymentReceivedTab = () => {
+    const navigate = useNavigate();
     return (
         <div>
             <div className="dashBoardNavContent">
@@ -13,8 +15,8 @@ const PaymentReceivedTab = () => {
                             <div className='text-center  my-5 py-5'>
                                 <FontAwesomeIcon icon={faUser} className="navTab-icons" />
                                 <p>There are no active customers</p>
-                                <button className="btn bg-dark text-white btn-create">
-                                <FontAwesomeIcon icon={faPlus} /> New Customer</button>
+                                <button className="btn bg-dark text-white btn-create" onClick={() => {navigate('/createCustomer')}}>
+                                    <FontAwesomeIcon icon={faPlus} /> New Customer</button>
                             </div>
                         </div>
                     </div>

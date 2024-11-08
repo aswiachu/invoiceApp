@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom'; 
 
 const ItemsTab = () => {
+  const navigate = useNavigate(); 
+
   const [activeTab, setActiveTab] = useState('active');
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+
+  const handleCreateInvoice = () => {
+    navigate('/newItem');
+  }
 
   return (
     <div className="dashBoardNavContent">
@@ -29,19 +36,20 @@ const ItemsTab = () => {
               <div className='text-center my-5 py-5'>
                 <FontAwesomeIcon icon={faBagShopping} className="navTab-icons" />
                 <p>There are no active items</p>
-                  <button className="btn bg-dark text-white btn-create">
-                    <FontAwesomeIcon icon={faPlus} className="icon"/><span>New Item</span></button>
+                <button className="btn bg-dark text-white btn-create" onClick={handleCreateInvoice}>
+                  <FontAwesomeIcon icon={faPlus} className="icon" /><span>New Item</span>
+                </button>
               </div>
             )}
             {activeTab === 'unpaid' && (
               <div className='text-center my-5 py-5'>
-               <FontAwesomeIcon icon={faBagShopping} className="navTab-icons" />
+                <FontAwesomeIcon icon={faBagShopping} className="navTab-icons" />
                 <p>There are no unpaid items</p>
               </div>
             )}
             {activeTab === 'all' && (
               <div className='text-center my-5 py-5'>
-              <FontAwesomeIcon icon={faBagShopping} className="navTab-icons" />
+                <FontAwesomeIcon icon={faBagShopping} className="navTab-icons" />
                 <p>There are no items</p>
               </div>
             )}
